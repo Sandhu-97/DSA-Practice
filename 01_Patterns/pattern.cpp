@@ -137,8 +137,7 @@ void pattern8()
             cout << " ";
         for (int j = (2 * n - 1) - 2 * i; j > 0; j--)
             cout << "*";
-        if (i != n - 1)
-            cout << endl;
+        cout << endl;
     }
 }
 
@@ -173,7 +172,7 @@ void pattern10(){
         if (i>=5){
             for (int j=0;j<2*n-i-1;j++) cout << "*";
         }
-        if (i!=2*n-2)cout << endl;
+        cout << endl;
     }
 }
 
@@ -270,6 +269,131 @@ void pattern16(){
         cout <<endl;
     }
 }
+
+void pattern17() {
+
+    //     A
+    //    ABA
+    //   ABCBA
+    //  ABCDCBA
+    // ABCDEDCBA
+    for (int i=0;i<n;i++){
+        for (int j=i;j<n-1;j++) cout << " ";
+        for (int j=0;j<=i;j++){
+            cout << (char) ('A'+j);
+        }
+        for (char j='A'+i-1;j>='A';j--) cout << j;
+        cout << endl;
+    }
+}
+
+void pattern18(){
+    // E 
+    // D E 
+    // C D E 
+    // B C D E 
+    // A B C D E 
+    for (int i=0;i<n;i++){
+        for (char j = 'E'-i;j<='E';j++){
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+}
+
+void pattern19(){
+    // **********
+    // ****  ****
+    // ***    ***
+    // **      **
+    // *        *
+    // *        *
+    // **      **
+    // ***    ***
+    // ****  ****
+    // **********
+    for (int i=1;i<=2*n;i++){
+        if (i<=5){
+            for (int j=0;j<=n-i;j++) cout << "*";
+            for (int j=0;j<2*(i-1);j++) cout << " ";
+            for (int j=0;j<=n-i;j++) cout << "*";
+        }
+
+        if (i>5){
+            for (int j=0;j<i-n;j++){
+                cout <<"*";
+            }
+            for (int j=0;j<(2*n-i)*2;j++) cout << " ";
+            for (int j=0;j<i-n;j++){
+                cout <<"*";
+            }
+        }
+        cout << endl;
+    }
+}
+
+void pattern20(){
+    // *        *
+    // **      **
+    // ***    ***
+    // ****  ****
+    // **********
+    // ****  ****
+    // ***    ***
+    // **      **
+    // *        *
+    for (int i=1;i<=2*n-1;i++){
+        if (i<=5){
+            for (int j=0;j<i;j++) cout << "*";
+            for (int j=0;j<2*(n-i);j++) cout << " ";
+            for (int j=0;j<i;j++) cout << "*";
+        }
+        else {
+            for (int j=0;j<2*n-i;j++) cout << "*";
+            for (int j=0;j<2*(i-n);j++) cout << " ";
+            for (int j=0;j<2*n-i;j++) cout << "*";
+        }
+        cout << endl;
+    }
+}
+
+void pattern21(){
+    // *****
+    // *   *
+    // *   *
+    // *   *
+    // *****
+    for (int i=0;i<n;i++){
+        if (i==0 || i==n-1) for (int j=0;j<n;j++) cout << "*";
+        else {
+            cout << "*";
+            for (int j=0;j<n-2;j++) cout << " ";
+            cout << "*";
+        }
+
+        cout << endl;
+    }
+}
+
+void pattern22(){
+    // 4444444
+    // 4333334
+    // 4322234
+    // 4321234
+    // 4322234
+    // 4333334
+    // 4444444
+    for (int i=0;i<2*n-1;i++){
+        for (int j=0;j<2*n-1;j++){
+            int left = j;
+            int top = i;
+            int right = (2*n-2) - j;
+            int bottom = (2*n-2) - i;
+            cout << n-min(min(left, right), min(top, bottom));
+        }
+        cout << endl;
+    }
+}
 int main()
 {
 
@@ -289,4 +413,10 @@ int main()
     pattern14();
     pattern15();
     pattern16();
+    pattern17();
+    pattern18();
+    pattern19();
+    pattern20();
+    pattern21();
+    pattern22();
 }
