@@ -12,7 +12,7 @@ vector<int> divisors(int n){
         if (n%i==0)
         arr.push_back(i);
     }
-as
+
     return arr;
 }
 
