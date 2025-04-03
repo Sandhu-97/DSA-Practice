@@ -21,7 +21,6 @@ int sum_n(int n){
 }
 
 int main(){
-    // print(10);
-    // print_name(0, 5);
-    cout << sum_n(6);
+
+    cout << sum_n(10);
 }
