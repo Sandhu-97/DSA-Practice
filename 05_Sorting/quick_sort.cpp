@@ -32,12 +32,10 @@ void quickSort(vector<int> &arr, int low, int high){
 
 int main(){
     vector<int> arr = {4, 1, 2,7, 5, 8, 3, 6};
-    // quickSort(arr, 0, arr.size()-1);
-    // for (int i=0;i<arr.size();i++){
-    //     cout << arr[i] << " ";
-    // }
-
-    for (long long int i=0;i<1000000;i++){
-        cout << i;
+    quickSort(arr, 0, arr.size()-1);
+    for (int i=0;i<arr.size();i++){
+        cout << arr[i] << " ";
     }
+
+   
 }
